@@ -6,7 +6,7 @@
 #    By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 15:00:50 by mtravez           #+#    #+#              #
-#    Updated: 2022/11/28 15:51:35 by mtravez          ###   ########.fr        #
+#    Updated: 2022/11/29 11:45:15 by mtravez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC=ft_hexprint.c \
 LIBSTUFF=libft/ft_putchar_fd.c \
 		libft/ft_putnbr_fd.c \
 		libft/ft_strlen.c	\
+		libft/ft_isprint.c \
 		libft/ft_putstr_fd.c	
 
 OBJ=ft_hexprint.o \
@@ -30,6 +31,7 @@ LIBOBJ=ft_putchar_fd.o \
 		ft_putnbr_fd.o	\
 		ft_strlen.o \
 		ft_print_ptr.o \
+		ft_isprint.o \
 		ft_putstr_fd.o	
 
 FLAGS= -Wall -Wextra -Werror
@@ -41,7 +43,7 @@ $(NAME):
 	@ar rc $(NAME) $(OBJ) $(LIBOBJ)
 
 clean:
-	@/bin/rm -f $(OBJ) $(LIBOBJ) $(OBJBONUS)
+	@/bin/rm -f $(OBJ) $(LIBOBJ)
 
 fclean: clean
 	@/bin/rm -f $(NAME) a.out

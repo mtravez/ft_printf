@@ -6,12 +6,14 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:26:38 by mtravez           #+#    #+#             */
-/*   Updated: 2022/11/28 19:30:14 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/11/29 12:06:51 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/*This function reurns how many digits there are 
+in an int*/
 static int	get_digits(int n)
 {
 	int	sum;
@@ -27,23 +29,28 @@ static int	get_digits(int n)
 	return (sum);
 }
 
+/*This function prints a string and returns the number
+of characters inside. If the sttring is null, it will run
+itself with the string "(null)" instead*/
 int	ft_putstr(char *string)
 {
 	if (!string)
 	{
-		ft_putstr_fd("(null)", 1);
-		return (6);
+		return (ft_putstr("(null)"));
 	}
 	ft_putstr_fd(string, 1);
 	return (ft_strlen(string));
 }
 
+/*This function prints a character and returns 1*/
 int	ft_putchar(char c)
 {
 	ft_putchar_fd(c, 1);
 	return (1);
 }
 
+/*This function prints a number and returns how many digits
+it has*/
 int	ft_putnbr(int n)
 {
 	int	count;
@@ -56,6 +63,8 @@ int	ft_putnbr(int n)
 	return (count);
 }
 
+/*This function prints out an unsigned int and returns
+how many digits it has*/
 int	ft_put_unsigned(unsigned int n)
 {
 	unsigned int	div;

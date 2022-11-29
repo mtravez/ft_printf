@@ -6,15 +6,15 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:51:31 by mtravez           #+#    #+#             */
-/*   Updated: 2022/11/28 16:58:28 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/11/29 12:15:19 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "ft_printf.h"
-#include <stdio.h>
-#include <stdarg.h>
 
+/*This function checks the character after the '%' and executes the
+appropiate conversions. It also returns the number of characters printed
+as a result*/
 static int	ft_print_vars(char *string, va_list params)
 {
 	if (string[1] == 'c')
@@ -38,6 +38,8 @@ static int	ft_print_vars(char *string, va_list params)
 	return (0);
 }
 
+/*This function prints out strings and whatever variables you want.
+It also returns the amount of characters it has printed.*/
 int	ft_printf(const char *string, ...)
 {
 	int		index;
@@ -46,9 +48,9 @@ int	ft_printf(const char *string, ...)
 
 	index = 0;
 	count = 0;
-	va_start(ap, string);
 	if (!string)
 		return (0);
+	va_start(ap, string);
 	while (string[index])
 	{
 		if (string[index] == '%')

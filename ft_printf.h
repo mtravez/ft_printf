@@ -6,15 +6,16 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:32:04 by mtravez           #+#    #+#             */
-/*   Updated: 2022/11/28 15:50:58 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/11/29 11:44:37 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdio.h>
+# include <unistd.h>
 # include <stdlib.h>
+# include <stdarg.h>
 # include "libft/libft.h"
 
 int	ft_hexprint(unsigned int n, char uplo);
